@@ -1,22 +1,27 @@
-print("Hello GitHub!")
-print("Hello AI")
 from record import save_record
+from view import show_records
 
-print("=== 学习记录系统 ===")
 
-text = input("请输入你今天学的内容：今天学了GitHub和Python基础")
-
-save_record(text)
-
-from record import save_record
-
-print("=== 学习记录系统 v2 ===")
+print("=== 学习记录系统 v3 ===")
 
 while True:
-    text = input("请输入学习内容（输入exit退出）")
+    print()
+    print("1. 添加学习记录")
+    print("2. 查看历史记录")
+    print("3. 退出系统")
 
-    if text == "exit":
+    choice = input("请选择功能：")
+
+    if choice == "1":
+        text = input("请输入学习内容：")
+        save_record(text)
+
+    elif choice == "2":
+        show_records()
+
+    elif choice == "3":
         print("已退出系统")
         break
 
-    save_record(text)
+    else:
+        print("输入错误，请输入 1、2 或 3")
